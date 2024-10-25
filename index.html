@@ -367,5 +367,74 @@
             </div>
         </div>
     </section>
+    import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+
+const Portfolio = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Productivity Calculator App",
+      description: "Back office application developed with Ruby on Rails 2.5.3, HTML, Bootstrap, and CSS. Deployed on Heroku. Features employee productivity tracking and reporting.",
+      image: "/api/placeholder/400/300",
+      link: "https://github.com/yourusername/productivity-app"
+    },
+    {
+      id: 2,
+      title: "Jeans Lovers Shop",
+      description: "E-commerce platform for denim clothing. Built with modern web technologies and features a responsive design with shopping cart functionality.",
+      image: "/api/placeholder/400/300",
+      link: "https://jeansloversshop.com"
+    },
+    {
+      id: 3,
+      title: "Whisper",
+      description: "Social media platform with focus on privacy. Features end-to-end encryption and disappearing messages.",
+      image: "/api/placeholder/400/300",
+      link: "https://whisperapp.com"
+    }
+  ];
+
+  return (
+    <div id="portafolio" className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold text-center mb-12">Trabajos / Portfolio</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <div key={project.id} className="group relative">
+            <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <div className="relative h-64">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Hover overlay with description */}
+                <div className="absolute inset-0 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-center">
+                  <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-white text-sm">{project.description}</p>
+                </div>
+              </div>
+              
+              <CardContent className="p-4">
+                <a 
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block text-center py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
+                >
+                  Ver Proyecto
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
 </body>
 </html>
