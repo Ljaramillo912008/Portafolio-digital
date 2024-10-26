@@ -597,7 +597,8 @@ setInterval(() => {
 }, 5000);
 
     </script>
-  <section class="contacto">
+
+  <section class="contact">
     <h2>Estar En Contacto</h2>
     <div class="contact-info">
       <div class="contact-item">
@@ -612,40 +613,24 @@ setInterval(() => {
       </div>
     </div>
 
-    <form id="contactform">
-  <input type="text" id="name" placeholder="Nombre" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="text" id="subject" placeholder="Asunto" required>
-  <textarea id="message" placeholder="Mensaje" required></textarea>
-  <button type="submit">Enviar Mensaje</button>
-</form>
-<p id="confirmation" style="display:none;">
-  <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente!
-</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Asunto" required>
+      <textarea placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+    <p id="confirmation" style="display:none;">¡Mensaje enviado exitosamente!</p>
+  </section>
 
   <script>
-    document.getElementById("contactform").addEventListener("submit", function(event) {
-  event.preventDefault(); // Evita el envío real del formulario
-
-  // Muestra el mensaje de confirmación
-  const confirmation = document.getElementById("confirmation");
-  confirmation.style.display = "flex";
-
-  // Limpia los campos del formulario
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("subject").value = "";
-  document.getElementById("message").value = "";
-
-  // Oculta el mensaje de confirmación después de unos segundos
-  setTimeout(() => {
-    confirmation.style.display = "none";
-  }, 3000); // Ocultar después de 3 segundos
-});
-
+    function handleSubmit(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').style.display = 'block';
+    }
   </script>
     <style>
-body {
+        body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
@@ -724,25 +709,11 @@ body {
 }
 
 #confirmation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-  background-color: #dff0d8; /* Fondo verde claro */
-  color: #3c763d; /* Texto verde oscuro */
-  border: 1px solid #3c763d;
-  border-radius: 5px;
+  color: #1a2b3a;
   font-size: 1.1rem;
   margin-top: 20px;
-  max-width: 400px;
-  margin: 20px auto 0;
 }
 
-#confirmation i {
-  font-size: 1.5rem;
-  color: #3c763d; /* Ícono verde */
-}
     </style>
 
 </body>
