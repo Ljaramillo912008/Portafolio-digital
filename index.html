@@ -17,7 +17,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(26, 43, 58, 0.85);
             backdrop-filter: blur(8px);
             padding: 1rem 2rem;
             z-index: 1000;
@@ -32,12 +32,17 @@
         }
 
         .logo {
-            color: white;
-            font-size: 1.5rem;
+            color: #f8f4f1;
+            font-size: 1.8rem;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: #c0a36e;
         }
 
         .nav-links {
@@ -46,25 +51,25 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #f8f4f1;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #00ffcc;
+            color: #c14438;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            background: linear-gradient(rgba(26, 43, 58, 0.7), rgba(26, 43, 58, 0.7)),
                         url('/api/placeholder/1920/1080') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #f8f4f1;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -91,9 +96,9 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            border: 4px solid #00ffcc;
+            border: 4px solid #c0a36e;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            box-shadow: 0 0 20px rgba(192, 163, 110, 0.3);
         }
 
         .hero h1 {
@@ -106,7 +111,7 @@
         .hero h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #00ffcc;
+            color: #c14438;
         }
 
         .hero h3 {
@@ -138,7 +143,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: rgba(0, 255, 204, 0.5);
+            background: rgba(192, 163, 110, 0.5);
             border-radius: 50%;
             animation: float 20s infinite linear;
         }
@@ -203,12 +208,12 @@
         </div>
         <div class="hero-content">
             <img src="/api/placeholder/200/200" alt="Foto de perfil" class="profile-image">
-            <h1>ESTUDIANTE DE INFORMATICA</h1>
-            <h2>Desarrollador De Paginas Web</h2>
+            <h1>ESTUDIANTE DE INFORMÁTICA</h1>
+            <h2>Desarrollador De Páginas Web</h2>
             <p class="hero-description">
-                Estudiante en Informática de la Unidad Educativa Montepiedra. Especialización en Desarrolo web
-                con la tecnologia de HTML, CSS y JavaScript, con estudios y certificacion en Tecnico en Redes Ip
-                e Introduccion a la programacion.
+                Estudiante en Informática de la Unidad Educativa Montepiedra. Especialización en Desarrollo web
+                con la tecnología de HTML, CSS y JavaScript, con estudios y certificación en Técnico en Redes IP
+                e Introducción a la programación.
             </p>
         </div>
     </section>
