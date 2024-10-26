@@ -191,7 +191,6 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#acerca">Acerca de</a>
                 <a href="#Portafolio">Portafolio</a>
-                <a href="#estudios">Estudios</a>
                 <a href="#certificaciones">Certificaciones</a>
                 <a href="#contacto">Contacto</a>
             </div>
@@ -598,5 +597,123 @@ setInterval(() => {
 }, 5000);
 
     </script>
+  <section class="contacto">
+    <h2>Estar En Contacto</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <p>Teléfono</p>
+        <span>(+56) 9 7653 7746</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>Email</p>
+        <span>alvaro.rivas.p@gmail.com</span>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Asunto" required>
+      <textarea placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+    <p id="confirmation" style="display:none;">¡Mensaje enviado exitosamente!</p>
+  </section>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').style.display = 'block';
+    }
+  </script>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  text-align: center;
+  color: #555;
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: #1a2b3a; /* Azul Marino Suave */
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  font-weight: bold;
+  color: #c14438; /* Rojo Terracota */
+}
+
+.contact-item span {
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1a2b3a; /* Azul Marino Suave */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c14438; /* Rojo Terracota */
+}
+
+#confirmation {
+  color: #1a2b3a;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+    </style>
+
 </body>
 </html>
