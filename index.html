@@ -482,5 +482,121 @@ h2 {
 }
 
 </style>
+    <section id="certificaciones">
+    <h2>Certificaciones</h2>
+    <div class="carrusel">
+        <div class="carrusel-imagenes">
+            <img src="certificado1.png" alt="Certificado 1">
+            <img src="certificado2.png" alt="Certificado 2">
+            <img src="certificado3.png" alt="Certificado 3">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <div class="carrusel-indicadores">
+            <span class="activo"></span>
+            <span></span>
+            <span></span>
+            <!-- Agrega más indicadores según la cantidad de imágenes -->
+        </div>
+    </div>
+    <ul class="lista-certificados">
+        <li>Cyber Security Foundation - CSFPC | CertiProf 12/2020</li>
+        <li>Trabajo Remoto y Colaboración Virtual RWPCPC | CertiProf 12/2020</li>
+        <li>LifeLong Learning | CertiProf 08/2020</li>
+        <li>Scrum Learning Professional Certificate - SFPC | CertiProf 06/2020</li>
+        <!-- Agrega más certificados según sea necesario -->
+    </ul>
+</section>
+<style>
+    #certificaciones {
+    text-align: center;
+    padding: 40px;
+}
+
+#certificaciones h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3a7bd5;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.carrusel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrusel-imagenes {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-imagenes img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carrusel-indicadores span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carrusel-indicadores .activo {
+    background-color: #3a7bd5;
+}
+
+.lista-certificados {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.lista-certificados li {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+</style>
+    <script>
+        const carruselImagenes = document.querySelector('.carrusel-imagenes');
+const indicadores = document.querySelectorAll('.carrusel-indicadores span');
+let indiceActual = 0;
+
+function mostrarImagen(index) {
+    carruselImagenes.style.transform = `translateX(-${index * 100}%)`;
+    indicadores.forEach((indicador, i) => {
+        indicador.classList.toggle('activo', i === index);
+    });
+}
+
+indicadores.forEach((indicador, i) => {
+    indicador.addEventListener('click', () => {
+        indiceActual = i;
+        mostrarImagen(indiceActual);
+    });
+});
+
+// Cambio automático de imagen cada 5 segundos
+setInterval(() => {
+    indiceActual = (indiceActual + 1) % indicadores.length;
+    mostrarImagen(indiceActual);
+}, 5000);
+
+    </script>
 </body>
 </html>
