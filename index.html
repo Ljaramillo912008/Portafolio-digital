@@ -612,23 +612,37 @@ setInterval(() => {
       </div>
     </div>
 
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Asunto" required>
-      <textarea placeholder="Mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar Mensaje</button>
-    </form>
-   <p id="confirmation" style="display:none;">
+    <form id="contactForm">
+  <input type="text" id="name" placeholder="Nombre" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="text" id="subject" placeholder="Asunto" required>
+  <textarea id="message" placeholder="Mensaje" required></textarea>
+  <button type="submit">Enviar Mensaje</button>
+</form>
+<p id="confirmation" style="display:none;">
   <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente!
 </p>
 
-
   <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      document.getElementById('confirmation').style.display = 'block';
-    }
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita el envío real del formulario
+
+  // Muestra el mensaje de confirmación
+  const confirmation = document.getElementById("confirmation");
+  confirmation.style.display = "flex";
+
+  // Limpia los campos del formulario
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("message").value = "";
+
+  // Oculta el mensaje de confirmación después de unos segundos
+  setTimeout(() => {
+    confirmation.style.display = "none";
+  }, 3000); // Ocultar después de 3 segundos
+});
+
   </script>
     <style>
         body {
