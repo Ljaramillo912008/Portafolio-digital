@@ -620,7 +620,9 @@ setInterval(() => {
       <textarea placeholder="Mensaje" rows="5" required></textarea>
       <button type="submit">Enviar Mensaje</button>
     </form>
-    <p id="confirmation" style="display:none;">¡Mensaje enviado exitosamente!</p>
+    <p id="confirmation" style="display:none;">
+  <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente!
+</p>
   </section>
 
   <script>
@@ -709,10 +711,26 @@ setInterval(() => {
 }
 
 #confirmation {
-  color: #1a2b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: #dff0d8; /* Fondo verde claro */
+  color: #3c763d; /* Texto verde oscuro */
+  border: 1px solid #3c763d;
+  border-radius: 5px;
   font-size: 1.1rem;
   margin-top: 20px;
+  max-width: 400px;
+  margin: 20px auto 0;
 }
+
+#confirmation i {
+  font-size: 1.5rem;
+  color: #3c763d; /* Ícono verde */
+}
+
 
     </style>
 
