@@ -197,7 +197,7 @@
                 <a href="#acerca">Acerca de</a>
                 <a href="#Portafolio">Portafolio</a>
                 <a href="#certificaciones">Certificaciones</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#contact">Contacto</a>
             </div>
         </div>
     </nav>
@@ -500,8 +500,8 @@ h2 {
     </div>
     <ul class="lista-certificados">
         <li>Introduccion a la Programacion | Capacitate para el empleo 01/2023</li>
-        <li>Trabajo Remoto y Colaboración Virtual RWPCPC | CertiProf 08/2024</li>
-        <li>LifeLong Learning | CertiProf 08/2020</li>
+        <li>Tecnico en Redes IP | Capacitate para el empleo 08/2024</li>
+        <li>Introduccion al Desarrollo Web HTML y CSS | SkillShop 08/2024</li>
         <!-- Agrega más certificados según sea necesario -->
     </ul>
 </section>
@@ -597,8 +597,7 @@ setInterval(() => {
 }, 5000);
 
     </script>
-
-  <section class="contact">
+<section class="contact">
     <h2>Estar En Contacto</h2>
     <div class="contact-info">
       <div class="contact-item">
@@ -614,25 +613,39 @@ setInterval(() => {
     </div>
 
     <form class="contact-form" onsubmit="handleSubmit(event)">
-  <input type="text" id="name" placeholder="Nombre" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="text" id="subject" placeholder="Asunto" required>
-  <textarea id="message" placeholder="Mensaje" required></textarea>
-  <button type="submit">Enviar Mensaje</button>
+      <input type="text" id="name" placeholder="Nombre" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="subject" placeholder="Asunto" required>
+      <textarea id="message" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
     </form>
-    <p id="confirmation" style="display:none;">
-  <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente!
-</p>
-  </section>
 
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      document.getElementById('confirmation').style.display = 'block';
-    }
-  </script>
-    <style>
-        body {
+    <p id="confirmation" style="display:none;">
+      <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente!
+    </p>
+</section>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    
+    // Mostrar el mensaje de confirmación
+    document.getElementById('confirmation').style.display = 'block';
+    
+    // Limpiar los campos del formulario
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
+    
+    // Ocultar el mensaje de confirmación después de 3 segundos
+    setTimeout(() => {
+      document.getElementById('confirmation').style.display = 'none';
+    }, 3000);
+  }
+</script>
+<style>
+    body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
@@ -724,6 +737,7 @@ setInterval(() => {
   margin-top: 20px;
   max-width: 400px;
   margin: 20px auto 0;
+  transition: opacity 0.3s ease;
 }
 
 #confirmation i {
@@ -731,8 +745,8 @@ setInterval(() => {
   color: #3c763d; /* Ícono verde */
 }
 
-
-    </style>
+</style>
+ 
 
 </body>
 </html>
